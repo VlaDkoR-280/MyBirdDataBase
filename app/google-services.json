@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "565392087081",
+    "firebase_url": "https://bird-data-base.firebaseio.com",
+    "project_id": "bird-data-base",
+    "storage_bucket": "bird-data-base.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565392087081:android:1b2d9ddc9a078119fc2438",
+        "android_client_info": {
+          "package_name": "com.vladkor.mybirddatabase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565392087081-mtlckegruhhcjplrq7dq5hpc50hd1k1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcqk6CsF5a9iRVUA4Xb5Cl_GgCaCiE6ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565392087081-mtlckegruhhcjplrq7dq5hpc50hd1k1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

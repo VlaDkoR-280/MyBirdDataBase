@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".add_layout">
+
+    <EditText
+        android:id="@+id/titlePlain"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="Название птицы"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/descriptPlain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Краткое описание"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/titlePlain"
+        app:layout_constraintStart_toStartOf="@+id/titlePlain"
+        app:layout_constraintTop_toBottomOf="@+id/titlePlain" />
+
+    <EditText
+        android:id="@+id/ldescriptPlain"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Описание"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/descriptPlain"
+        app:layout_constraintStart_toStartOf="@+id/descriptPlain"
+        app:layout_constraintTop_toBottomOf="@+id/descriptPlain" />
+
+    <ImageView
+        android:id="@+id/imagePreview"
+        android:layout_width="0dp"
+        android:layout_height="560dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ldescriptPlain"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_light_normal_background" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
