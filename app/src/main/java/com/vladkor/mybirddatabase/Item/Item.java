@@ -1,13 +1,21 @@
 package com.vladkor.mybirddatabase.Item;
 
+import android.graphics.Bitmap;
 import android.media.Image;
 
 public class Item {
     private String title;
     private String description;
     private String l_description;
-    private Image img;
+    private String img;
 
+    public String getImg() {
+        return img;
+    }
+
+    private void setImg(String img) {
+        this.img = img;
+    }
 
     public String getTitle() {
         return title;
@@ -33,17 +41,18 @@ public class Item {
         this.l_description = l_description;
     }
 
-    public Item(String title, String description, String l_description){
+    public Item(String title, String description, String l_description, String image){
         setTitle(title);
         setDescription(description);
         setL_description(l_description);
+        img = image;
     }
 
     public Item(){
         setL_description("");
         setTitle("");
         setDescription("");
-        ;
+        img = null;
     }
 
 }

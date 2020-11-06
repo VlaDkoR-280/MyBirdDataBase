@@ -1,9 +1,13 @@
 package com.vladkor.mybirddatabase;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.snackbar.Snackbar;
 import com.vladkor.mybirddatabase.Item.Item;
 
+import java.net.URI;
 import java.util.ArrayList;
 
 public class MyRecycler extends RecyclerView.Adapter<MyRecycler.ViewHolder> {
@@ -24,12 +29,14 @@ public class MyRecycler extends RecyclerView.Adapter<MyRecycler.ViewHolder> {
         public View myView;
         public TextView title;
         public TextView description;
+        public ImageView imageView;
         public TextView l_description;
         public ViewHolder(View v){
             super(v);
             myView = v;
             title = v.findViewById(R.id.titleTxt);
             description = v.findViewById(R.id.descriptTxt);
+            imageView = v.findViewById(R.id.img);
         }
 
     }
@@ -51,6 +58,18 @@ public class MyRecycler extends RecyclerView.Adapter<MyRecycler.ViewHolder> {
         final Item myItem = item.get(position);
         holder.title.setText(myItem.getTitle());
         holder.description.setText(myItem.getDescription());
+        try {
+            Bitmap bm;
+            if(myItem.getImg() != null){
+                byte[] buffer = myItem.getImg().getBytes();
+                bm = BitmapFactory.decodeByteArray(buffer, 0, buffer.length);
+                holder.imageView.setImageBitmap(Bitmap.createScaledBitmap(bm, holder.imageView.getWidth(), holder.imageView.getHeight(), false));
+            }
+
+
+        }catch (Exception e){
+
+        }
         holder.myView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +79,7 @@ public class MyRecycler extends RecyclerView.Adapter<MyRecycler.ViewHolder> {
                 i.putExtra("TITLE", myItem.getTitle());
                 i.putExtra("DESCRIPTION", myItem.getDescription());
                 i.putExtra("LARGE_DESCRIPTION", myItem.getL_description());
+                i.putExtra("IMAGE", myItem.getImg());
                 v.getContext().startActivity(i);
             }
         });
